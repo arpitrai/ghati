@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>GhatiParty - Unleash the Ghati in You</title>
+	<meta name="description" content="A setlist of the best ghati songs we could find" />
+    <!--<link media="all" rel="stylesheet" type="text/css" href="../static/css/all.css" />-->
+    <link media="all" rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/all.css" />
+    <script type="text/javascript" src="{{ STATIC_URL }}jwplayer/jwplayer.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/all.js"></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-30473261-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+         })();
+     </script>
+</head>
+<body>
+    <h1><a id="home" href="/">You select the Ghati Level of your Party. We set the Mood.</a></h1>
+    <div id="main">
+        <div id="header">
+            <ul class="nav">
+                <li><a href="/music/im-too-cool-for-this">I'm too cool for this</a></li>
+                <li><a href="/music/ghatipan-in-control">Ghatipan in Control</a></li>
+                <li><a id="default" href="/music/ghatipan-heaven">Ghatipan Heaven</a></li>
+                <li><a href="/music/mix-it-all">Mix it all</a></li>
+            </ul>
+        </div>
+        {% block player %}
+        {% endblock %}
+        <div id="footer">
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

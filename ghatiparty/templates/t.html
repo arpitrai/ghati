@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>GhatiParty - Unleash the Ghati in You</title>
+	<meta name="description" content="A setlist of the best ghati songs we could find" />
+    <!--<link media="all" rel="stylesheet" type="text/css" href="../static/css/all.css" />-->
+    <link media="all" rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/all.css" />
+    <script type="text/javascript" src="{{ STATIC_URL }}jwplayer/jwplayer.js"></script>
+</head>
+<body>
+    <h1>You select the Ghati Level of your Party. We set the Mood.</h1>
+    <div id="main">
+        <div id="header">
+            <ul class="nav">
+                <li><a href="#">I'm too cool for this shit</a></li>
+                <li><a href="#">Ghatipan in control</a></li>
+                <li><a href="#">Ghatipan heaven</a></li>
+                <li><a href="#">Mix it all</a></li>
+            </ul>
+        </div>
+        <div id="main_container">
+            <div id="container">Loading the music player....</div>
+                <script type="text/javascript">
+                    jwplayer("container").setup({
+                        "flashplayer": "{{ STATIC_URL }}jwplayer/player.swf",
+                        "playlist": [
+                            { 
+                                file: "http://www.youtube.com/watch?v=KkitbA8H6co", 
+                                title: "The first video", 
+                                duration: 300,
+                                description: "This is just a random test to do some testing",
+                            },
+                            { 
+                                file: "http://www.youtube.com/watch?v=viqHnWfJdL0", 
+                                title: "The second video is just a test", 
+                                duration: 833.7,
+                                description: "This is just a random test to do some testing",
+                            },
+                            { 
+                                file: "http://www.youtube.com/watch?v=viqHnWfJdL0", 
+                                title: "The second video is just a test", 
+                                duration: 833.7,
+                                description: "This is just a random test to do some testing",
+                            },
+                            { 
+                                file: "http://www.youtube.com/watch?v=viqHnWfJdL0", 
+                                title: "The second video is just a test", 
+                                duration: 833.7,
+                                description: "This is just a random test to do some testing",
+                            },
+                        ], 
+                        "controlbar.position": "top",
+                        "playlist.position": "bottom",
+                        "playlist.size": 340,
+                        "repeat": "always",
+                        "shuffle": "false",
+                        "volume": 50,
+                        "height": 190,
+                        "width": 450,
+                        "skin": "{{ STATIC_URL }}jwplayer/bekle.zip",
+                    });
+                </script>
+        </div>
+    </div>
+</body>
+</html>

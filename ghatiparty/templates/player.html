@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block player %}
+<div id="main_container">
+    <div id="container">Loading the music player....</div>
+        <script type="text/javascript">
+            jwplayer("container").setup({
+                "flashplayer": "{{ STATIC_URL }}jwplayer/player.swf",
+                "playlist": [
+                    {% for song in playlist %}
+                    {
+                        file: "{{ song.url }}",
+                        title: {% if song.mood == "G1" %}
+                                    "{{ song.title }} -- by -- {{ song.artist }}",
+                                {% else %}
+                                    "{{ song.title }} -- from the movie -- {{ song.artist }}",
+                                {% endif %}
+                        duration: {{ song.duration }},
+                    },
+                    {% endfor %}
+                ], 
+                "controlbar.position": "bottom",
+                "playlist.position": "bottom",
+                "playlist.size": 120,
+                "repeat": "always",
+                "shuffle": "false",
+                "volume": 50,
+                "height": 450,
+                "width": 650,
+                "skin": "{{ STATIC_URL }}jwplayer/classic_modified.zip",
+                "controlbar.forcenextprev": "true",
+            });
+        </script>
+</div>
+{% endblock %}
